@@ -6,7 +6,7 @@ package iblogstreet.creativepatterns.abstractfactory;
  * @desc
  */
 
-public class ConcreteFactory implements AbstractFactory {
+public class ConcreteFactory extends AbstractFactory {
 
     @Override
     public AbstractProductA createProductA() {

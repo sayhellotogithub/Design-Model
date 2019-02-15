@@ -6,8 +6,8 @@ package iblogstreet.creativepatterns.abstractfactory;
  * @desc
  */
 
-public interface AbstractFactory {
-    AbstractProductA createProductA();
+public abstract class AbstractFactory {
+    abstract AbstractProductA createProductA();
 
-    AbstractProductB createProductB();
+    abstract AbstractProductB createProductB();
 }
