@@ -4,6 +4,9 @@ import java.io.IOException;
 
 import iblogstreet.creativepatterns.abstractfactory.AbstractFactory;
 import iblogstreet.creativepatterns.abstractfactory.ConcreteFactory;
+import iblogstreet.creativepatterns.builder.Builder;
+import iblogstreet.creativepatterns.builder.ConcreteBuilder;
+import iblogstreet.creativepatterns.builder.Director;
 import iblogstreet.creativepatterns.factorymethod.ConcreteCreatorA;
 import iblogstreet.creativepatterns.factorymethod.ConcreteCreatorB;
 import iblogstreet.creativepatterns.factorymethod.Creator;
@@ -45,5 +48,11 @@ public class MainTest {
         monkeyKingPrototypeClone.getEye().setColor("green");
 
         System.out.println(monkeyKingPrototype.getName() + "," + monkeyKingPrototype.getEye().getColor());
+
+        Builder builder = new ConcreteBuilder();
+        Director director = new Director();
+        director.construct(builder);
+        builder.getProduct().show();
+
     }
 }
