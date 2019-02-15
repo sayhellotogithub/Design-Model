@@ -7,7 +7,7 @@ package iblogstreet.creativepatterns.abstractfactory;
  */
 
 public abstract class AbstractFactory {
-    abstract AbstractProductA createProductA();
+    public abstract AbstractProductA createProductA();
 
-    abstract AbstractProductB createProductB();
+    public abstract AbstractProductB createProductB();
 }
