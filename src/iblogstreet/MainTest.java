@@ -4,6 +4,8 @@ import java.io.IOException;
 
 import iblogstreet.creativepatterns.abstractfactory.AbstractFactory;
 import iblogstreet.creativepatterns.abstractfactory.ConcreteFactory;
+import iblogstreet.creativepatterns.bridge.ConcreteImplementor;
+import iblogstreet.creativepatterns.bridge.RefinedAbstraction;
 import iblogstreet.creativepatterns.builder.Builder;
 import iblogstreet.creativepatterns.builder.ConcreteBuilder;
 import iblogstreet.creativepatterns.builder.Director;
@@ -53,6 +55,13 @@ public class MainTest {
         Director director = new Director();
         director.construct(builder);
         builder.getProduct().show();
+
+//        IThreeHole tHole=new PowerAdapter();
+//        tHole.request();
+
+        RefinedAbstraction abstraction = new RefinedAbstraction();
+        abstraction.setImplementor(new ConcreteImplementor());
+        abstraction.operatorMore();
 
     }
 }
