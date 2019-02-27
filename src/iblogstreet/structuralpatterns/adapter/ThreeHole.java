@@ -1,4 +1,4 @@
-package iblogstreet.creativepatterns.adapter;
+package iblogstreet.structuralpatterns.adapter;
 
 /**
  * @author Armyone

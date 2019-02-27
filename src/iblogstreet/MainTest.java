@@ -4,8 +4,8 @@ import java.io.IOException;
 
 import iblogstreet.creativepatterns.abstractfactory.AbstractFactory;
 import iblogstreet.creativepatterns.abstractfactory.ConcreteFactory;
-import iblogstreet.creativepatterns.bridge.ConcreteImplementor;
-import iblogstreet.creativepatterns.bridge.RefinedAbstraction;
+import iblogstreet.structuralpatterns.bridge.ConcreteImplementor;
+import iblogstreet.structuralpatterns.bridge.RefinedAbstraction;
 import iblogstreet.creativepatterns.builder.Builder;
 import iblogstreet.creativepatterns.builder.ConcreteBuilder;
 import iblogstreet.creativepatterns.builder.Director;
@@ -18,6 +18,9 @@ import iblogstreet.creativepatterns.prototype.MonkeyKingPrototype;
 import iblogstreet.creativepatterns.singleton.SingletonPatternHungry;
 import iblogstreet.creativepatterns.singleton.SingletonPatternLazy;
 import iblogstreet.creativepatterns.singleton.SingletonPatternStaticMethod;
+import iblogstreet.structuralpatterns.composite.Component;
+import iblogstreet.structuralpatterns.composite.Composite;
+import iblogstreet.structuralpatterns.composite.Leaf;
 
 /**
  * @author Armyone
@@ -62,6 +65,18 @@ public class MainTest {
         RefinedAbstraction abstraction = new RefinedAbstraction();
         abstraction.setImplementor(new ConcreteImplementor());
         abstraction.operatorMore();
+
+        Component component = new Leaf();
+        component.setName("leaf 1");
+        Component component1 = new Leaf();
+        component1.setName("leaf 2");
+        Component composite = new Composite();
+        composite.setName("composite 1");
+
+        composite.add(component);
+        composite.add(component1);
+        component.add(component1);
+
 
     }
 }
