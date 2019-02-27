@@ -21,6 +21,10 @@ import iblogstreet.creativepatterns.singleton.SingletonPatternStaticMethod;
 import iblogstreet.structuralpatterns.composite.Component;
 import iblogstreet.structuralpatterns.composite.Composite;
 import iblogstreet.structuralpatterns.composite.Leaf;
+import iblogstreet.structuralpatterns.decorator.ConcreteComponent;
+import iblogstreet.structuralpatterns.decorator.ConcreteDecorator;
+import iblogstreet.structuralpatterns.decorator.ConcreteTwoDecorator;
+import iblogstreet.structuralpatterns.decorator.Decorator;
 
 /**
  * @author Armyone
@@ -76,6 +80,14 @@ public class MainTest {
         composite.add(component);
         composite.add(component1);
         component.add(component1);
+
+
+        ConcreteComponent concreteComponent = new ConcreteComponent();
+        Decorator decorator = new ConcreteDecorator(concreteComponent);
+        Decorator decorator1 = new ConcreteTwoDecorator(decorator);
+        decorator.sampleMethod();
+
+        decorator1.sampleMethod();
 
 
     }
